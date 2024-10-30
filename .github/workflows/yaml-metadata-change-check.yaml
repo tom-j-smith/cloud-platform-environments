@@ -32,7 +32,7 @@ jobs:
           script: |
                 const output = `#### YAML changes to metadata name or namespace detected:
                 <details><summary>Show</summary>
-                \`${process.env.RESULT}\`
+                <code>${process.env.RESULT}</code>
                 </details>`;
                 github.rest.issues.createComment({
                   issue_number: context.issue.number,
