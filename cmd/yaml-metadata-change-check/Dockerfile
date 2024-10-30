@@ -13,4 +13,4 @@ COPY . /go/bin
 
 RUN go build -ldflags "-s -w" .
 
-CMD ["change_file_check"]
+CMD ["yaml-metadata-change-check"]
