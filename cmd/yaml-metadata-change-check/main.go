@@ -26,6 +26,8 @@ func main() {
 	flag.Parse()
 	client := utils.GitHubClient(*token)
 
+	fmt.Printf("DEBUGGING\n%s\n%s\n%d", owner, repoName, pull)
+
 	files, _, err := utils.GetPullRequestFiles(client, owner, repoName, pull)
 	if err != nil {
 		panic(err)
