@@ -1,14 +1,15 @@
 package main
 
 import (
-	"change_file_check/utils"
 	"fmt"
 
 	"flag"
+	"log"
 	"os"
 
-	"github.com/google/martian/log"
 	githubaction "github.com/sethvargo/go-githubactions"
+
+	utils "github.com/tom-j-smith/cloud-platform-environments/cmd/yaml-metadata-change-check/utils"
 )
 
 var (
@@ -40,7 +41,7 @@ func main() {
 			//Get Branch content
 			ref, err := utils.GetPullRequestBranch(client, owner, repoName, pull)
 			if err != nil {
-				log.Errorf("Error fetching pull request branch: %v\n", err)
+				log.Fatalf("Error fetching pull request branch: %v\n", err)
 			}
 
 			content, err := utils.GetFileContent(client, file, owner, repoName, ref)
@@ -51,7 +52,7 @@ func main() {
 
 			branchFile, err := utils.DecodeContent(content)
 			if err != nil {
-				log.Errorf("Error decoding file content: %v\n", err)
+				log.Fatalf("Error decoding file content: %v\n", err)
 			}
 
 			//Get main content
@@ -63,7 +64,7 @@ func main() {
 
 			mainFile, err := utils.DecodeContent(mainContent)
 			if err != nil {
-				log.Errorf("Error decoding file content: %v\n", err)
+				log.Fatalf("Error decoding file content: %v\n", err)
 			}
 
 			splitMainDoc := utils.SplitYAMLDocuments([]byte(mainFile))
