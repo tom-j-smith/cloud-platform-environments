@@ -21,6 +21,7 @@ var (
 )
 
 func main() {
+	fmt.Printf("DEBUGGING\nREF:\t%s\nREPO:\t%s", ref, repo)
 	owner, repoName, pull = utils.GetOwnerRepoPull(*ref, *repo)
 
 	flag.Parse()
