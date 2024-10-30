@@ -33,7 +33,7 @@ jobs:
                 const output = `#### YAML changes to metadata name or namespace detected:
                 <details><summary>Show</summary>
                 \`\`\`\n${process.env.RESULT}\n\`\`\`
-                </details>
+                </details>`;
                 github.rest.issues.createComment({
                   issue_number: context.issue.number,
                   owner: context.repo.owner,
