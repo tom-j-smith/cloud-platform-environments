@@ -13,7 +13,7 @@ import (
 )
 
 var (
-	token    = flag.String("token", os.Getenv("GIT_TOKEN"), "GitHub Personal Access Token")
+	token    = flag.String("token", os.Getenv("GITHUB_TOKEN"), "GitHub Personal Access Token")
 	ref      = flag.String("ref", os.Getenv("GITHUB_REF"), "Branch Name")
 	repo     = flag.String("repo", os.Getenv("GITHUB_REPOSITORY"), "Repository Name")
 	owner    string

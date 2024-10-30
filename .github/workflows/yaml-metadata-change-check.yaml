@@ -21,7 +21,7 @@ jobs:
         name: Check Yaml Metadata for changes 
         uses: tom-j-smith/cloud-platform-environments/cmd/yaml-metadata-change-check@main
         env:
-          GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
       - name: Comment Yaml Metadata change   
         uses: actions/github-script@v7
