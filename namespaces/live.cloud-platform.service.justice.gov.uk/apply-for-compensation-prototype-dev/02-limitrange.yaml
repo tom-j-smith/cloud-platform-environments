@@ -2,7 +2,7 @@ apiVersion: v1
 kind: LimitRange
 metadata:
   name: limitrange
-  namespace: apply-for-compensation-prototype-dev
+  namespace: apply-for-compensation-prototype-dev-change
 spec:
   limits:
   - default:
